@@ -1,0 +1,27 @@
+{
+  "name": "git-workshop-upstream",
+  "version": "0.1.0",
+  "description": "A script that generates git repos and hosts them to teach git",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kirens/git-workshop-upstream.git"
+  },
+  "keywords": [
+    "git"
+  ],
+  "author": "Kirens <dev@erik.work>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kirens/git-workshop-upstream/issues"
+  },
+  "homepage": "https://github.com/Kirens/git-workshop-upstream#readme",
+  "dependencies": {
+    "cgi": "^0.3.1",
+    "stack": "^0.1.0"
+  }
+}

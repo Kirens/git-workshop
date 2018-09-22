@@ -1,0 +1,8 @@
+version: '3'
+services:
+  git-ws-upstream-git:
+    build:
+      context: .
+      dockerfile: Dockerfile-git-image
+    ports:
+      - 8080:80

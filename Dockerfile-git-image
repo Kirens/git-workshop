@@ -1,0 +1,27 @@
+FROM node:8.12.0-stretch
+
+MAINTAINER Erik Nygren <dev@erik.work>
+
+# We need git
+RUN apt-get update && apt-get install -y git-core
+
+# Prepare git directory
+RUN mkdir -p /srv/gitrepos \
+    && chown www-data:www-data /srv/gitrepos \
+    && chsh www-data -s /bin/sh \
+    && su - www-data -c "cd /srv/gitrepos && git clone --bare https://github.com/akaProxy/akaProxy.github.io" \
+    && chsh www-data -s /usr/sbin/nologin
+
+WORKDIR /path/to/workdir
+
+COPY package*.json ./
+COPY src ./src
+
+RUN npm install
+
+EXPOSE 80
+
+STOPSIGNAL SIGTERM
+
+#CMD bash -c "/etc/init.d/fcgiwrap start && echo starting nginx & nginx -g 'daemon off;'"
+CMD npm start
