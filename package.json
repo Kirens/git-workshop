@@ -4,8 +4,8 @@
   "description": "A script that generates git repos and hosts them to teach git",
   "main": "backend/main.js",
   "scripts": {
-    "start": "su - www-data -c 'cd /srv/node && node backend/main.js'",
-    "debug": "su - www-data -c 'cd /srv/node && node --inspect=0.0.0.0:9229 --debug-brk backend/main.js'",
+    "start": "node backend/main.js",
+    "debug": "node --inspect=0.0.0.0:9229 --debug-brk backend/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

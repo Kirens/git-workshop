@@ -1,12 +1,23 @@
 version: '3'
 services:
-#  gate:
-#    image: nginx:latest
-
+  gate:
+    image: nginx:latest
+    volumes:
+      - ./interface/www/:/usr/share/nginx/html:ro
+      - ./interface/nginx.site.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - 8082:80
+    depends_on:
+      - backend
+    links:
+      - backend:git
   backend:
     build:
       context: .
       dockerfile: Dockerfile-git-image
+    volumes:
+      - ./projects:/srv/gitrepos/root:ro
+    expose:
+      - 8080
     ports:
-      - 8080:8080
       - 9229:9229

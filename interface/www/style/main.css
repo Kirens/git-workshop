@@ -1,0 +1,72 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #eee;
+/*  margin: 0;
+  margin-top: 7em;
+  padding: 1em;*/
+}
+
+header { padding: 2em; right: 0; width: auto; }
+
+header div {
+  font-size: initial;
+  font-family: Montserrat;
+  text-align: center;
+  opacity: 0.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Poiret One', sans-serif;
+  text-align: center;
+}
+h3 { margin-top: 0; }
+
+.mui-tabs__pane {
+  padding: 2em 1em;
+  background-color: #f8f8f8;
+}
+.mui-tabs__bar {
+  background-color: #f8f8f8;
+  margin-top: 2em;
+}
+.mui-textfield { margin: 0 1em; }
+.mui-row { margin-top: 3em; }
+
+.flex {
+  margin: 1em auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  margin: 1em;
+}
+
+#error {
+  display: none;
+  background-color: #FF5252;
+  color: #FFEBEE;
+  padding: 1em;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 1em;
+  margin: 1em;
+}
+#success {
+  display: none;
+  background-color: #DCEDC8;
+  padding: 1em;
+  border-radius: 1em;
+  margin: 1em;
+}
+#success a { color: inherit; }
+
+code {
+  background-color: #BBB;
+  text-align: center;
+  padding: 2pt;
+  display: block;
+  margin: 0;
+}

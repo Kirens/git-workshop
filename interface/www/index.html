@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Git Workshop</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Poiret+One" rel="stylesheet">
+    <!-- load MUI -->
+    <link
+        href="https://cdn.muicss.com/mui-0.9.41/css/mui.min.css"
+        rel="stylesheet"
+        type="text/css"
+        crossorigin="anonymous"
+        integrity="sha512-ik43FscPhXj9OFh4ELMvhx6rudiziWyz7sbiTSAXECdugCZmGBukLwjdp5Au3TcL4QyMChPHTiPFv6bh41S+hw=="
+    />
+    <script
+        src="https://cdn.muicss.com/mui-0.9.41/js/mui.min.js"
+        crossorigin="anonymous"
+        integrity="sha512-EJAERKB4RgOruI27gTFRRVPmkUCZEVKKbhcLQWluEBc4JwbqYaVe8fzUs5SfSyBrmwWpKV+A9a4m2zG/7dgdKw=="
+    ></script>
+    <!-- custom style -->
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+</head>
+<body>
+    <header class="mui-appbar mui--z1">
+        <div>Hosted by DNS &amp; snIT feat. dHack &amp; digIT:</div>
+        <h1 class="mui--text-display4">What is git?</h1>
+    </header>
+    <div id="content-wrapper" class="mui-container-fluid">
+        <div class="mui-row">
+            <section class="mui-panel mui-col-md-8 mui-col-md-offset-2">
+                <h2 class="mui--text-display3">How to install and run git</h2>
+                Git is a program you have to run on your computer. The installation steps depend on your operating system.
+
+                <ul class="mui-tabs__bar mui-tabs__bar--justified">
+                    <li class="mui--is-active">
+                        <a data-mui-toggle="tab" data-mui-controls="pane-justified-1">Windows</a>
+                    </li>
+                    <li><a data-mui-toggle="tab" data-mui-controls="pane-justified-2">macOS / OS X</a></li>
+                    <li><a data-mui-toggle="tab" data-mui-controls="pane-justified-3">Linux</a></li>
+                </ul>
+                <div class="mui-tabs__pane mui--is-active" id="pane-justified-1">
+                    Go there, download that, run and select those things.
+                    Open a command prompt and type git.
+                </div>
+                <div class="mui-tabs__pane" id="pane-justified-2">
+                    Install it from a store maybe.
+                </div>
+                <div class="mui-tabs__pane" id="pane-justified-3">
+                    These are instructions for Ubuntu/Debian, if you're running another system we assume you know how to find the solution yourself...
+                </div>
+
+                <br class="spacer">
+
+                <div class="note">
+                    There are a lot of powerfull graphical git tools, we're not going to talk about them in this workshop but if you don't appreciate the command line interface you can have a look at <a href="https://www.gitkraken.com/">GitKraken</a>. A simpler, but often sufficient, tool is <a href="https://desktop.github.com/">GitHub Desktop</a>.
+                </div>
+            <section>
+        </div>
+        <div class="mui-row">
+            <section class="mui-panel mui-col-md-8 mui-col-md-offset-2">
+                <h2 class="mui--text-display3">Get yourself some practice!</h2>
+                Let's <em>pull</em> ourselves together and try what we've lerned. Get a practice repo by selecting a challange and typing a username. This is to make sure you won't accidentally work on someone else's project.
+                <br>
+                <form id="selectProject" class="mui-form flex">
+                    <div class="mui-dropdown">
+                        <button class="mui-btn mui-btn--primary" data-mui-toggle="dropdown">
+                            <span id="project">Select a project</span>
+                            <span class="mui-caret"></span>
+                        </button>
+                        <ul id="projects" class="mui-dropdown__menu">
+                            <li><a>Fetching Projects...</a></li>
+                        </ul>
+                    </div>
+                    <div class="mui-textfield">
+                        <input id="name" type="text">
+                        <label>Username</label>
+                    </div>
+                    <input type="submit" class="mui-btn mui-btn--primary" value="Create repo" />
+                </form>
+                <div id="error">[error] Username not availablie</div>
+                <div id="success">
+                    <h3 class="mui--text-headline">Project Created</h3>
+                    Now open your terminal and run
+                    <code class="mui-panel">git clone <span id="the-link"></a></code>
+                    <br>
+                    Sometimes you'll be asked for credentials, they are the following
+                    <br>
+                    Username: <u id="the-username"></u>
+                    <br>
+                    Password: <u id="the-pwd"></u>
+                </div>
+            </section>
+        </div>
+        <div class="mui-row">
+            <section class="mui-panel mui-col-md-8 mui-col-md-offset-2">
+                <h2 class="mui--text-display3">Well, what is git then?</h2>
+                <p>
+                    Git is a powerful tool for version control and cooperative coding. But to many it seems very complicated and hard to wrap your head around. This leads people to avoid using it properly and in turn gives them even more trouble.
+                </p>
+                <p>
+                    This site was part of a workshop on git at Chalmers where we tried to introduce people to git in a not so frightening way. The presentation can be found <a href="/presentation">here</a>.
+                </p>
+            <section>
+        </div>
+    </div>
+    <footer>
+      <div class="mui-container mui--text-center">
+        &lt;&gt; with ♥ by <a href="https://github.com/Kirens/git-workshop-upstream/graphs/contributors">Kiren et.al.</a>
+      </div>
+    </footer>
+    <script src="code/main.js"></script>
+</body>
+</html>
