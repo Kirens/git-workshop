@@ -8,6 +8,9 @@ const {
   getUsers,
 } = require('./users.js')
 
+const port = 8080
+const root = '/srv/gitrepos/root'
+
 
 const exec
   = cmd => new Promise((resolve, reject) => {
@@ -30,7 +33,6 @@ const gitCGI = cgi('/usr/lib/git-core/git-http-backend', {
   stderr: process.stderr
 })
 
-const root = '/srv/gitrepos/root'
 const projectData = {
   'introducetion': {
     location: 'git-workshop-upstream-introduction',
@@ -172,5 +174,5 @@ const catcher
     }
   }
 
-http.createServer(catcher(server)).listen(8080)
-console.log('Password for root:', createPasswordForUser('root'))
+http.createServer(catcher(server)).listen(port)
+console.log('Server listening on port ' + port)

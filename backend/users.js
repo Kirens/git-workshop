@@ -6,8 +6,10 @@ const {
 } = require('./utils.js')
 const decodeBase64 = require('atob')
 
+const nopass = Symbol('No password')
+
 // Globals
-const users = new Map()
+const users = new Map([['root', nopass]])
 
 // Methods
 const getUsers = module.exports.getUsers
