@@ -2,6 +2,7 @@
 const {
   compose,
   randomListElement,
+  safeLowerCase,
 } = require('./utils.js')
 const decodeBase64 = require('atob')
 
@@ -9,10 +10,14 @@ const decodeBase64 = require('atob')
 const users = new Map()
 
 // Methods
+const getUsers = module.exports.getUsers
+  = () =>
+    [...users.keys()]
+
 const credentialsFor
   = ([name, pass]) =>
-    console.log('Name/Pass:', name, pass) || users.get(name) === pass
-    ? name
+    users.get(safeLowerCase(name)) === pass
+    ? safeLowerCase(name)
     : undefined
 
 const parseCredentials
@@ -27,6 +32,7 @@ const authenticate = module.exports.authenticate
 
 const createPasswordForUser = module.exports.createPasswordForUser
   = name => {
+    name = name.toLowerCase()
     if (name.length < 3 || users.has(name) || name.match(/[^A-Za-z]/)) return false
 
     const pass

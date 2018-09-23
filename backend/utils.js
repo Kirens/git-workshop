@@ -8,3 +8,10 @@ const compose = module.exports.compose
 const randomListElement = module.exports.randomListElement
   = list =>
     list[Math.floor(Math.random() * list.length)]
+
+const safeLowerCase = module.exports.safeLowerCase
+  = text =>
+    text
+      && typeof text.toLowerCase === 'function'
+      && text.toLowerCase()
+    || text

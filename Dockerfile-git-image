@@ -6,25 +6,11 @@ MAINTAINER Erik Nygren <dev@erik.work>
 RUN apt-get update && apt-get install -y git-core
 
 # Allow to run as user www-data
-RUN chsh www-data -s /bin/sh \
-    && mkdir -p /home/www-data \
-    && chown www-data:www-data /home/www-data\
-    && usermod -d /home/www-data www-data
-
-# Create git config
-RUN su - www-data -c "\
-      git config --global user.email 'woody@dtek.se' \
-      && git config --global user.name 'Woody Woodpecker' \
-    "
+RUN chsh www-data -s /bin/sh
 
 # Prepare git directory
 RUN mkdir -p /srv/gitrepos/root \
-    && chown www-data:www-data /srv/gitrepos \
-    && chown www-data:www-data /srv/gitrepos/root \
-    && su - www-data -c "\
-         cd /srv/gitrepos/root \
-         && git clone --bare https://github.com/akaProxy/akaProxy.github.io \
-       "
+    && chown www-data:www-data /srv/gitrepos
 
 WORKDIR /srv/node
 
@@ -38,5 +24,4 @@ EXPOSE 9229
 
 STOPSIGNAL SIGTERM
 
-#CMD bash -c "/etc/init.d/fcgiwrap start && echo starting nginx & nginx -g 'daemon off;'"
-CMD npm run debug
+CMD npm start
