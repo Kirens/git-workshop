@@ -63,10 +63,18 @@ footer {
 }
 #success a { color: inherit; }
 
-code {
+#success code {
   background-color: #BBB;
   text-align: center;
   padding: 2pt;
   display: block;
   margin: 0;
+}
+
+code {
+  background-color: #BBB;
+  text-align: center;
+  margin: 0 5pt;
+  padding: 2pt 5pt;
+  white-space: nowrap;
 }

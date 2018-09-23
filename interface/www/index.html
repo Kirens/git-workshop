@@ -29,7 +29,7 @@
     </header>
     <div id="content-wrapper" class="mui-container-fluid">
         <div class="mui-row">
-            <section class="mui-panel mui-col-md-8 mui-col-md-offset-2">
+            <section class="mui-panel mui-col-md-8 mui-col-lg-6 mui-col-md-offset-2 mui-col-lg-offset-3">
                 <h2 class="mui--text-display3">How to install and run git</h2>
                 Git is a program you have to run on your computer. The installation steps depend on your operating system.
 
@@ -41,14 +41,85 @@
                     <li><a data-mui-toggle="tab" data-mui-controls="pane-justified-3">Linux</a></li>
                 </ul>
                 <div class="mui-tabs__pane mui--is-active" id="pane-justified-1">
-                    Go there, download that, run and select those things.
-                    Open a command prompt and type git.
+                    <p>
+                        First, let's check if git is already installed. Open the command-promt (press start and type <em>cmd</em>) or git bash (press start and type <em>git bash</em>).
+                        Then type the following and press enter.
+                        <code>git --version</code>
+                        If you get something similar to <em>git version 2.19.0</em> it is installed!
+                        Read on how to configure your name further down.
+                    <p>
+
+                    <h3>Installing</h3>
+                    <p>
+                        Download git <a href="https://git-scm.com/download/win">here</a> and run the installer.
+                        Try the above mentioned test to see if the install was sucsessfull.
+                    </p>
+
+                    <h3>Creating a user</h3>
+                    <p>
+                        Now with git installed we need to make certain git knows who we are, see if it already does by typing
+                        <code>git config user.name</code>
+                        If it responds with a name you've got everything set up.
+                        Otherwise type<br>
+                        <code>git config --global user.name "Your Name"</code><br>
+                        <code>git config --global user.email "your@email.com"</code><br>
+                    </p>
                 </div>
                 <div class="mui-tabs__pane" id="pane-justified-2">
-                    Install it from a store maybe.
+                    <p>
+                        First, let's check if git is already installed. Open the terminal and
+                        then type the following and press enter.
+                        <code>git --version</code>
+                        If you get something similar to <em>git version 2.19.0</em> it is installed!
+                        Read on how to configure your name further down.
+                    </p>
+
+                    <h3>Installing</h3>
+                    <p>
+                        Download git <a href="https://git-scm.com/download/mac">here</a> and run the installer.
+                        Try the above mentioned test to see if the install was sucsessfull.
+                    </p>
+
+
+                    <h3>Creating a user</h3>
+                    <p>
+                        Now with git installed we need to make certain git knows who we are, see if it already does by typing
+                        <code>git config user.name</code>
+                        If it responds with a name you've got everything set up.
+                        Otherwise type<br>
+                        <code>git config --global user.name "Your Name"</code><br>
+                        <code>git config --global user.email "your@email.com"</code><br>
+                    </p>
                 </div>
                 <div class="mui-tabs__pane" id="pane-justified-3">
-                    These are instructions for Ubuntu/Debian, if you're running another system we assume you know how to find the solution yourself...
+                    <p>
+                        These are instructions for Ubuntu/Debian, if you're running another system we assume you know how to find the solution yourself...
+                    </p>
+                    <p>
+                        First, let's check if git is already installed. Open your terminal and
+                        then type the following and press enter.
+                        <code>git --version</code>
+                        If you get something similar to <em>git version 2.19.0</em> it is installed!
+                        Read on how to configure your name further down.
+                    </p>
+
+                    <h3>Installing</h3>
+                    <p>
+                        In your terminal run
+                        <code>sudo apt-get update</code> and then
+                        <code>sudo apt-get install git-all</code>
+                        Try the above mentioned test to see if the install was sucsessfull.
+                    </p>
+
+                    <h3>Creating a user</h3>
+                    <p>
+                        Now with git installed we need to make certain git knows who we are, see if it already does by typing
+                        <code>git config user.name</code>
+                        If it responds with a name you've got everything set up.
+                        Otherwise type<br>
+                        <code>git config --global user.name "Your Name"</code><br>
+                        <code>git config --global user.email "your@email.com"</code><br>
+                    </p>
                 </div>
 
                 <br class="spacer">
@@ -59,7 +130,7 @@
             <section>
         </div>
         <div class="mui-row">
-            <section class="mui-panel mui-col-md-8 mui-col-md-offset-2">
+            <section class="mui-panel mui-col-md-8 mui-col-lg-6 mui-col-md-offset-2 mui-col-lg-offset-3">
                 <h2 class="mui--text-display3">Get yourself some practice!</h2>
                 Let's <em>pull</em> ourselves together and try what we've lerned. Get a practice repo by selecting a challange and typing a username. This is to make sure you won't accidentally work on someone else's project.
                 <br>
@@ -94,7 +165,7 @@
             </section>
         </div>
         <div class="mui-row">
-            <section class="mui-panel mui-col-md-8 mui-col-md-offset-2">
+            <section class="mui-panel mui-col-md-8 mui-col-lg-6 mui-col-md-offset-2 mui-col-lg-offset-3">
                 <h2 class="mui--text-display3">Well, what is git then?</h2>
                 <p>
                     Git is a powerful tool for version control and cooperative coding. But to many it seems very complicated and hard to wrap your head around. This leads people to avoid using it properly and in turn gives them even more trouble.
@@ -107,7 +178,7 @@
     </div>
     <footer>
       <div class="mui-container mui--text-center">
-        &lt;&gt; with ♥ by <a href="https://github.com/Kirens/git-workshop-upstream/graphs/contributors">Kiren et.al.</a>
+        &lt;&gt; with ♥ by <a href="https://github.com/Kirens">Kiren</a>
       </div>
     </footer>
     <script src="code/main.js"></script>

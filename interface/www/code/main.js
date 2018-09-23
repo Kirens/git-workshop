@@ -73,6 +73,9 @@ const selectProject
 
 form.addEventListener('submit', async e => {
   e.preventDefault()
+  if(project.textContent == 'Select a project')
+    return error({message:'no project selected'})
+
   errorMsg.style.display = 'none'
   try {
     success(await createProject(project.textContent, name.value))

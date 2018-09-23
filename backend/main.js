@@ -138,8 +138,9 @@ const hook
   }
 
 const server = async (req, res) => {
-  if(req.url === '/git/api/projects') return await api(req, res)
-  if(req.url === '/git/api/status') return await status(req, res)
+  req.url = req.url.slice(4) // remove /git
+  if(req.url === '/api/projects') return await api(req, res)
+  if(req.url === '/api/status') return await status(req, res)
 
   const user
     = req.url.endsWith('/info/refs?service=git-upload-pack')
@@ -147,14 +148,13 @@ const server = async (req, res) => {
     ? 'anyone'
     : authenticate(req.headers.authorization)
 
-  if (!user) {
+  if (!user || req.url.indexOf(user) !== '0') {
     res.statusCode = 401
     res.setHeader('WWW-Authenticate', 'Basic realm="example"')
     res.end('Access denied')
     return
   }
 
-  req.url = req.url.slice(4) // remove /git
   await hook((/^\/([^\/]+\/[^\/]+)/g).exec(req.url)[1])
   gitCGI(req, res)
 }
@@ -174,5 +174,9 @@ const catcher
     }
   }
 
+// Remove old files on startup
+exec('find /srv/gitrepos/ -maxdepth 1 | grep -v -e ^/srv/gitrepos/root$ -e ^/srv/gitrepos/$ | xargs rm -rf')
+
+// Start server
 http.createServer(catcher(server)).listen(port)
 console.log('Server listening on port ' + port)
