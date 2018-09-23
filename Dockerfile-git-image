@@ -5,23 +5,38 @@ MAINTAINER Erik Nygren <dev@erik.work>
 # We need git
 RUN apt-get update && apt-get install -y git-core
 
-# Prepare git directory
-RUN mkdir -p /srv/gitrepos \
-    && chown www-data:www-data /srv/gitrepos \
-    && chsh www-data -s /bin/sh \
-    && su - www-data -c "cd /srv/gitrepos && git clone --bare https://github.com/akaProxy/akaProxy.github.io" \
-    && chsh www-data -s /usr/sbin/nologin
+# Allow to run as user www-data
+RUN chsh www-data -s /bin/sh \
+    && mkdir -p /home/www-data \
+    && chown www-data:www-data /home/www-data\
+    && usermod -d /home/www-data www-data
 
-WORKDIR /path/to/workdir
+# Create git config
+RUN su - www-data -c "\
+      git config --global user.email 'woody@dtek.se' \
+      && git config --global user.name 'Woody Woodpecker' \
+    "
+
+# Prepare git directory
+RUN mkdir -p /srv/gitrepos/root \
+    && chown www-data:www-data /srv/gitrepos \
+    && chown www-data:www-data /srv/gitrepos/root \
+    && su - www-data -c "\
+         cd /srv/gitrepos/root \
+         && git clone --bare https://github.com/akaProxy/akaProxy.github.io \
+       "
+
+WORKDIR /srv/node
 
 COPY package*.json ./
-COPY src ./src
+COPY backend ./backend
 
 RUN npm install
 
 EXPOSE 80
+EXPOSE 9229
 
 STOPSIGNAL SIGTERM
 
 #CMD bash -c "/etc/init.d/fcgiwrap start && echo starting nginx & nginx -g 'daemon off;'"
-CMD npm start
+CMD npm run debug

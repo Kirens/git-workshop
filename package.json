@@ -2,9 +2,10 @@
   "name": "git-workshop-upstream",
   "version": "0.1.0",
   "description": "A script that generates git repos and hosts them to teach git",
-  "main": "src/main.js",
+  "main": "backend/main.js",
   "scripts": {
-    "start": "node src/main.js",
+    "start": "su - www-data -c 'cd /srv/node && node backend/main.js'",
+    "debug": "su - www-data -c 'cd /srv/node && node --inspect=0.0.0.0:9229 --debug-brk backend/main.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,7 +22,7 @@
   },
   "homepage": "https://github.com/Kirens/git-workshop-upstream#readme",
   "dependencies": {
-    "cgi": "^0.3.1",
-    "stack": "^0.1.0"
+    "atob": "^2.1.2",
+    "cgi": "^0.3.1"
   }
 }
