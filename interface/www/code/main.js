@@ -65,11 +65,47 @@ const addProject
     projects.appendChild(project)
   }
 
+const mapRepoOpts
+  = mapper =>
+    Array.from(document.getElementsByClassName('repoOptions'))
+      .map(mapper)
+
+const showRepoOpts
+  = () =>
+    mapRepoOpts(el => {el.style.display = 'block'})
+
+const hideRepoOpts
+  = () =>
+    mapRepoOpts(el => {el.style.display = 'none'})
+
+const setInstructions
+  = name =>
+    document.getElementById('projectPanel').setAttribute('data-project', name) || true
+
+
+const projectHandlers
+  = { "Introduction"
+        : () =>
+          setInstructions('intro') && showRepoOpts()
+    , "Introduction (repetition)"
+        : () =>
+          setInstructions('intro2') && showRepoOpts()
+    , "GitHub Account"
+        : () =>
+          setInstructions('gh') && hideRepoOpts()
+    , "Collaborating on GitHub"
+        : () =>
+          setInstructions('co-gh') && hideRepoOpts()
+    }
+
 const selectProject
   = e => {
     e.preventDefault()
     project.textContent = e.target.textContent
+    projectHandlers[e.target.textContent]()
   }
+
+projects
 
 form.addEventListener('submit', async e => {
   e.preventDefault()
@@ -78,7 +114,7 @@ form.addEventListener('submit', async e => {
 
   errorMsg.style.display = 'none'
   try {
-    success(await createProject(project.textContent, name.value))
+    success(await createProject('introduction', name.value))
   } catch(e) {
     error(e)
   }
@@ -86,11 +122,6 @@ form.addEventListener('submit', async e => {
 })
 
 setTimeout(async () => {
-  try {
-    const projs = await getProjects()
-    clearProjects()
-    projs.forEach(addProject)
-  } catch(e) {
-    error({message: 'could not fetch '})
-  }
+  clearProjects()
+  Object.keys(projectHandlers).forEach(addProject)
 })

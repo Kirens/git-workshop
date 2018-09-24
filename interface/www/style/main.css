@@ -78,3 +78,14 @@ code {
   padding: 2pt 5pt;
   white-space: nowrap;
 }
+
+#projectPanel #intro,
+#projectPanel #intro2,
+#projectPanel #gh,
+#projectPanel #co-gh
+  { display: none; }
+#projectPanel[data-project="intro"] #intro,
+#projectPanel[data-project="intro2"] #intro2,
+#projectPanel[data-project="gh"] #gh,
+#projectPanel[data-project="co-gh"] #co-gh
+  { display: block; }

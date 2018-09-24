@@ -34,7 +34,7 @@ const gitCGI = cgi('/usr/lib/git-core/git-http-backend', {
 })
 
 const projectData = {
-  'introducetion': {
+  'introduction': {
     location: 'git-workshop-upstream-introduction',
     hook: (path, user) => async i => {
       if(i != 1) return
@@ -137,6 +137,7 @@ const hook
     await proj.hook(proj.i++)
   }
 
+const anyone = Symbol('any user')
 const server = async (req, res) => {
   req.url = req.url.slice(4) // remove /git
   if(req.url === '/api/projects') return await api(req, res)
@@ -145,10 +146,10 @@ const server = async (req, res) => {
   const user
     = req.url.endsWith('/info/refs?service=git-upload-pack')
       || req.url.endsWith('/git-upload-pack')
-    ? 'anyone'
+    ? anyone
     : authenticate(req.headers.authorization)
 
-  if (!user || req.url.indexOf(user) !== '0') {
+  if (!user || user !== anyone && req.url.indexOf(user) !== 1) {
     res.statusCode = 401
     res.setHeader('WWW-Authenticate', 'Basic realm="example"')
     res.end('Access denied')
