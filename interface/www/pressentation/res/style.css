@@ -1,0 +1,208 @@
+.reveal .panel {
+  padding: 2em;
+  margin-bottom: 1.2em;
+  border-radius: 0;
+  background-color: #FFF;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 0 2px 0 rgba(0,0,0,.12);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 0 2px 0 rgba(0,0,0,.12);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.5em;
+  text-align: left;
+  color: rgba(0,0,0,.87);
+}
+.reveal .panel h2, .reveal .panel h3 {
+  font-family: 'Poiret One', sans-serif;
+  text-align: center;
+  color: rgba(0,0,0,.87);
+}
+.reveal .panel h2 {
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 56px;
+}
+.reveal .panel h3 {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+}
+.reveal .panel h2 {
+  font-family: 'Poiret One', sans-serif;
+  text-align: center;
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 56px;
+}
+.reveal .panel .btn {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: rgba(0,0,0,.87);
+  background-color: #FFF;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  display: inline-block;
+  height: 36px;
+  padding: 0 26px;
+  margin: 6px 0;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  background-image: none;
+  text-align: center;
+  line-height: 36px;
+  vertical-align: middle;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  font-family: inherit;
+  letter-spacing: .03em;
+  position: relative;
+  overflow: hidden;
+
+  color: #FFF;
+  background-color: #2196F3;
+}
+.reveal .panel .caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+.reveal .panel .textfield {
+  display: block;
+  padding-top: 15px;
+  margin-bottom: 20px;
+  position: relative;
+    margin: 0 1em;
+}
+.reveal .panel .textfield>input {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: transparent;
+  color: rgba(0,0,0,.87);
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,.26);
+  outline: 0;
+  width: 100%;
+  padding: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+  font-size: 16px;
+  font-family: inherit;
+  line-height: inherit;
+  background-image: none;
+  height: 32px;
+}
+.reveal .panel .textfield>label {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 100%;
+  color: rgba(0,0,0,.54);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reveal .slides section .fragment.highlight-red.visible {
+  color: rgba(0,0,0,.87);
+}
+.panel #success {
+  display: none;
+  background-color: #DCEDC8;
+  padding: 1em;
+  border-radius: 1em;
+  margin: 1em;
+  height: 13em;
+}
+.panel.visible #success {
+  display: block;
+}
+#success-spacer {
+  font-size: 0.5em;
+  height: 17em;
+}
+.panel.visible + #success-spacer {
+  display: none;
+}
+.reveal .panel .flex {
+    margin: 1em auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown.btn .fragment.visible,
+.dropdown.btn .fragment + .text2,
+.textfield .fragment.visible,
+.textfield .fragment + .text2 {
+  display: none;
+}
+.textfield .fragment.visible + .text2 {
+  display: block;
+}
+.dropdown.btn .fragment.visible + .text2 {
+  display: inline;
+}
+
+.reveal .panel code {
+  font-size: 1em;
+  padding: 1em;
+  text-align: center;
+  display: block;
+  margin: 0;
+}
+
+.reveal .terminal {
+  white-space: pre-wrap;
+  word-break: break-all;
+  background-color: #073642;
+  color: #657b83;
+  padding: 1em;
+}
+
+bright {
+  font-weight: bold;
+  color: #93a1a1;
+}
+
+base03 { color: #002b36 }
+base02 { color: #073642 }
+base01 { color: #586e75 }
+base00 { color: #657b83 }
+base0 { color: #839496 }
+base1 { color: #93a1a1 }
+base2 { color: #eee8d5 }
+base3 { color: #fdf6e3 }
+yellow { color: #b58900 }
+orange { color: #cb4b16 }
+red { color: #dc322f }
+magenta { color: #d33682 }
+violet { color: #6c71c4 }
+blue { color: #268bd2 }
+cyan { color: #2aa198 }
+green { color: #859900 }
+
+.reveal .fragment.replace-hide.visible {
+  display: none;
+}
+
+.reveal .fragment.flatten.visible {
+  max-height: 0px !important;
+  transform: translateY(-100%);
+}
+.reveal .fragment.inflate:not(.visible) { max-height: 0px !important }

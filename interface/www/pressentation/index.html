@@ -20,6 +20,10 @@
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="/lib/reveal.js/lib/css/zenburn.css">
 
+        <!-- Custom style -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Poiret+One" rel="stylesheet">
+		<link rel="stylesheet" href="res/style.css">
+
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -45,7 +49,9 @@
                         </small>
 					</p>
                     <aside class="notes">
-                		Wellcome!
+                		Wellcome! Glad here.
+                        Learn git. Popular tool.
+                        What, why?
                 	</aside>
 				</section>
 
@@ -56,6 +62,9 @@
 						<li>What is it?</li>
 						<li>Trying it out</li>
 						<li>Pizza and more exercises</li>
+                        <aside class="notes">
+                    		Formally done
+                    	</aside>
 					</ul>
 				</section>
 
@@ -65,7 +74,7 @@
 					<p class="fragment fade-in-then-semi-out">has used git before?</p>
 					<p class="fragment fade-in-then-semi-out">has herd of git before?</p>
 					<p class="fragment fade-in-then-semi-out">has coded in their studies?</p>
-					<p class="fragment fade-in-then-semi-out">has coded besides any courses at Chalmers?</p>
+					<p class="fragment fade-in-then-semi-out">has coded more than the courses at Chalmers?</p>
 				</section>
 
 				<section>
@@ -89,10 +98,252 @@
                     <p style="color: #FDF6E3">Installation instructions at <a href="https://git.dtek.se" style="color: #FDF6E3; text-decoration: underline;">git.dtek.se</a></p>
                 </section>
 
+				<section>
+                    <div class="panel fragment highlight-red" data-fragment-index="2">
+                        <h2>Get yourself some practice!</h2>
+                        Let's <em>pull</em> ourselves together and try what we've lerned. Get a practice repo by selecting a challange and typing a username. This is to make sure you won't accidentally work on someone else's project.
+                        <br>
+                        <form id="selectProject" class="mui-form flex">
+                            <div class="dropdown btn">
+                                <span class="fragment fade-out" data-fragment-index="1">Select a project</span>
+                                <span class="text2">Introduction</span>
+                                <span class="caret"></span>
+                            </div>
+                            <div class="textfield">
+                                <input id="name" type="text" class="fragment fade-out" data-fragment-index="1">
+                                <input id="name" type="text" value="kiren" class="text2">
+                                <label>Username</label>
+                            </div>
+                            <input type="submit" class="btn" value="Create repo">
+                        </form>
+                        <div id="success">
+                            <h3 class="mui--text-headline">Project Created</h3>
+                            Now open your terminal and run
+                            <code class="panel">git clone https://git.dhack.se/git/kiren/git-workshop-upstream-introduction</code>
+                            <br>
+                            Sometimes you'll be asked for credentials, they are the following
+                            <br>
+                            Username: <u>kiren</u>
+                            <br>
+                            Password: <u>boiling computer</u>
+                        </div>
+                    </div>
+                    <div id="success-spacer"></div>
+                </section>
+
+				<section>
+					<h1>Cloning</h1>
+                    <pre class="terminal">
+<bright>kiren@nixpix</bright> <green>~
+></green> <span class="fragment"><bright>git</bright> <cyan>clone</cyan></span><span class="fragment"><cyan> https://git.dhack.se/git/kirens/git-workshop-upstream-introduction</cyan></span><span class="fragment">
+Cloning into 'git-workshop-upstream-introduction'...
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0)
+Unpacking objects: 100% (3/3), done.
+<bright>kiren@nixpix</bright> <green>~
+></green></span> <span class="fragment"><bright>cd</bright> <cyan><u>git-workshop-upstream-introduction/</u></cyan></span>
+<span class="fragment"><bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master=)</base1>
+></green> <span class="fragment"><bright>ls</bright>
+README.txt</span></span>
+                    </pre>
+				</section>
+
+				<section>
+					<h1>Coding</h1>
+                    <pre class="terminal">
+<base1><orange>  1</orange> # Git introduction
+<orange>  2</orange> This is a project were we learn git
+<orange>  3</orange>
+<orange>  4</orange> # Contributors
+<orange>  5</orange> All of these great people have contributed to the project
+<orange>  6</orange>
+<orange>  7</orange>  * The IT-smurf
+<span class="fragment replace-hide fade-out" data-fragment-index="1">~</span><span class="fragment replace-show" data-fragment-index="1"><orange>  8</orange>  * Kiren</span>
+~
+~</base1>
+                    </pre>
+				</section>
+
+				<section>
+					<h1 style="margin: -0.2em">Commiting</h1>
+                    <pre class="terminal">
+<div class="fragment fade-out flatten" data-fragment-index="5" style="max-height: 15.5em"><bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master ⚡=)</base1>
+></green> <span class="fragment" data-fragment-index="1"><bright>git</bright> <cyan>status</cyan></span>
+<span class="fragment" data-fragment-index="2">On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add &lt;file>..." to update what will be committed)
+  (use "git checkout -- &lt;file>..." to discard changes in working directory)
+
+        <red>modified:   README.txt</red>
+
+no changes added to commit (use "git add" and/or "git commit -a")</span>
+</div><span class="fragment" data-fragment-index="2"><bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master ⚡=)</base1>
+></green></span> <span class="fragment" data-fragment-index="3"><bright>git</bright> <cyan>add</cyan></span> <span class="fragment" data-fragment-index="4"><cyan>README.txt</cyan></span>
+<span class="fragment" data-fragment-index="5"><bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master →=)</base1></green></span>
+<div class="fragment fade-in inflate" data-fragment-index="5" style="max-height: 15.5em; height: 15.5em"><green>></green> <span class="fragment" data-fragment-index="6"><bright>git</bright> <cyan>status</cyan></span>
+<span class="fragment" data-fragment-index="8">On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        <green>modified:   README.txt</green></span>
+
+<span class="fragment" data-fragment-index="8"><bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master →=)</base1>
+></green></span>
+</div>
+                    </pre>
+				</section>
+
+				<section>
+					<h1>Commiting</h1>
+                    <pre class="terminal">
+<bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master →=)</base1>
+></green> <span class="fragment"><bright>git</bright> <cyan>commit</cyan></span> <span class="fragment"><cyan>-m</cyan> <yellow>"Added contributors"</yellow> <cyan>-m</cyan> <yellow>"Added myself as a contributor"</yellow></span>
+<span class="fragment">[master 14d16a1] Added contributors
+ 1 file changed, 1 insertion(+)
+<bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master+)</base1>
+></green></span> <span class="fragment"><bright>git</bright> <cyan>status</cyan></span>
+<span class="fragment">On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+<bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master+)</base1>
+></green></span>
+
+                    </pre>
+				</section>
+
+                <section>
+    				<section>
+    					<h1>Pushing</h1>
+                        <pre class="terminal">
+<bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master=)</base1>
+></green></span> <span class="fragment"><bright>git</bright> <cyan>push</cyan></span>
+<span class="fragment">Username for 'https://git.dhack.se':</span>
+                        </pre>
+    				</section>
+
+        			<section>
+                        <div class="panel visible">
+                            <h2>Get yourself some practice!</h2>
+                            Let's <em>pull</em> ourselves together and try what we've lerned. Get a practice repo by selecting a challange and typing a username. This is to make sure you won't accidentally work on someone else's project.
+                            <br>
+                            <form id="selectProject" class="mui-form flex">
+                                <div class="dropdown btn">
+                                    <span>Introduction</span>
+                                    <span class="caret"></span>
+                                </div>
+                                <div class="textfield">
+                                    <input id="name" type="text" value="kiren">
+                                    <label>Username</label>
+                                </div>
+                                <input type="submit" class="btn" value="Create repo">
+                            </form>
+                            <div id="success">
+                                <h3 class="mui--text-headline">Project Created</h3>
+                                Now open your terminal and run
+                                <code class="panel">git clone https://git.dhack.se/git/kiren/git-workshop-upstream-introduction</code>
+                                <br>
+                                Sometimes you'll be asked for credentials, they are the following
+                                <br>
+                                Username: <u>kiren</u>
+                                <br>
+                                Password: <u>boiling computer</u>
+                            </div>
+                        </div>
+                    </section>
+
+    				<section>
+    					<h1>Pushing</h1>
+                        <div>
+                            <pre class="terminal" style="width: 110%; margin-left: calc(-5% - 1em);">
+<bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master+)</base1>
+></green></span> <bright>git</bright> <cyan>push</cyan>
+Username for 'https://git.dhack.se': <span class="fragment">kiren</span>
+<span class="fragment">Password for 'http://kiren@git.dhack.se':</span>
+<span class="fragment">To https://git.dhack.se/git/kiren/git-workshop-upstream-introduction
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://git.dhack.se/git/kiren/git-workshop-upstream-introduction'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+<bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master+)</base1>
+></green></span>
+                            </pre>
+                        </div>
+    				</section>
+                </section>
+
+				<section>
+    				<section>
+    					<h1>Pulling</h1>
+                        <pre class="terminal">
+<bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master=)</base1>
+></green> <span class="fragment"><bright>git</bright> <cyan>pull</cyan></span>
+<span class="fragment">remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0)
+Unpacking objects: 100% (3/3), done.
+From https://git.dhack.se/git/theuser/git-workshop-upstream-introduction
+   6b5ff34..e8e2239  master     -> origin/master
+Auto-merging README.txt
+CONFLICT (content): Merge conflict in README.txt
+Automatic merge failed; fix conflicts and then commit the result.
+<bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master ⚡→|MERGING<>)</base1>
+></green></span>
+                        </pre>
+    				</section>
+
+
+    				<section>
+    					<h1>Resolving conflicts</h1>
+                        <pre class="terminal">
+<base1><orange>  1</orange> # Git introduction
+<orange>  2</orange> This is a project were we learn git
+<orange>  3</orange>
+<orange>  4</orange> # Contributors
+<orange>  5</orange> All of these great people have contributed to the project
+<orange>  6</orange>
+<orange>  7</orange>  * The IT-smurf
+<orange>  8</orange> <span class="fragment replace-hide fade-out" data-fragment-index="1"><<<<<<< HEAD</span><span class="fragment replace-show" data-fragment-index="1"> * Kiren</span>
+<orange>  9</orange> <span class="fragment replace-hide fade-out" data-fragment-index="1"> * Kiren</span><span class="fragment replace-show" data-fragment-index="1"> * Woody Woodpecker</span>
+<span class="fragment replace-hide fade-out" data-fragment-index="1"><orange> 10</orange> =======</span><span class="fragment replace-show" data-fragment-index="1">~</span>
+<span class="fragment replace-hide fade-out" data-fragment-index="1"><orange> 11</orange>  * Woody Woodpecker</span><span class="fragment replace-show" data-fragment-index="1">~</span>
+<span class="fragment replace-hide fade-out" data-fragment-index="1"><orange> 12</orange> >>>>>>> e8e2239962a499ac6ee2b100041a76eddfa37a13</span><span class="fragment replace-show" data-fragment-index="1">~</span>
+~
+~</base1>
+                        </pre>
+    				</section>
+				</section>
+
+
+				<section style="text-align: left;">
+					<h1>Summary</h1>
+					<ul>
+						<li>init, clone</li>
+						<li>add, commit</li>
+                        <li>status</li>
+                        <li>push</li>
+						<li>pull</li>
+						<li>log</li>
+					</ul>
+                    <aside class="notes">
+                		There is a cheat sheet
+                	</aside>
+				</section>
+
 				<section style="text-align: left;">
 					<h1>Thanks!</h1>
 					<p>
-						- <a href="https://slides.com">git.dhack.se/eval</a> <br>
+                        - <a href="https://slides.com">git.dhack.se/eval</a> <br>
+						- Exercises <br>
 						- Pizza
 					</p>
 				</section>
@@ -111,6 +362,7 @@
                 //autoSlide: 5000,
 				controls: false,
 				progress: false,
+	            mouseWheel: true,
 				//history: true,
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
