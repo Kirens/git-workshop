@@ -42,7 +42,7 @@ const projectData = {
       const cmd = `cd /srv/gitrepos/${path}`
                 + ' && echo " * Woody Woodpecker" >> README.txt'
                 + ' && git -c user.name="Woody Woodpecker" -c user.email="woody@dtek.se"'
-                  + '  commit -am "Tought we\'d add a greeting"'
+                  + '  commit -am "I want to contribute"'
       await exec(cmd)
     },
   },

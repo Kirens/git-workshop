@@ -74,7 +74,7 @@
 					<p class="fragment fade-in-then-semi-out">has used git before?</p>
 					<p class="fragment fade-in-then-semi-out">has herd of git before?</p>
 					<p class="fragment fade-in-then-semi-out">has coded in their studies?</p>
-					<p class="fragment fade-in-then-semi-out">has coded more than the courses at Chalmers?</p>
+					<p class="fragment fade-in-then-semi-out">has coded not relating to a course at Chalmers?</p>
 				</section>
 
 				<section>
@@ -283,11 +283,12 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 				<section>
     				<section>
-    					<h1>Pulling</h1>
-                        <pre class="terminal">
-<bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master=)</base1>
-></green> <span class="fragment"><bright>git</bright> <cyan>pull</cyan></span>
-<span class="fragment">remote: Counting objects: 3, done.
+    					<h1 style="margin: -0.2em">Pulling</h1>
+                        <div>
+                            <pre class="terminal" style="width: 110%; margin-left: calc(-5% - 1em);">
+<div class="fragment fade-out flatten" data-fragment-index="4" style="max-height: 15.5em;"><bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master+)</base1>
+></green> <span class="fragment" data-fragment-index="1"><bright>git</bright> <cyan>pull</cyan></span>
+<span class="fragment" data-fragment-index="2">remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 1), reused 0 (delta 0)
 Unpacking objects: 100% (3/3), done.
@@ -295,10 +296,26 @@ From https://git.dhack.se/git/theuser/git-workshop-upstream-introduction
    6b5ff34..e8e2239  master     -> origin/master
 Auto-merging README.txt
 CONFLICT (content): Merge conflict in README.txt
-Automatic merge failed; fix conflicts and then commit the result.
+Automatic merge failed; fix conflicts and then commit the result.</div><span class="fragment" data-fragment-index="2"><bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master ⚡→|MERGING<>)</base1></green>
+<green>></green></span> <span class="fragment" data-fragment-index="3"><bright>git</bright> <cyan>status</cyan></span>
+<div class="fragment fade-in inflate" data-fragment-index="4" style="max-height: 20.5em;">On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add &lt;file>..." to mark resolution)
+
+          <red>both modified:   README.txt</red>
+
+no changes added to commit (use "git add" and/or "git commit -a")
 <bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master ⚡→|MERGING<>)</base1>
-></green></span>
-                        </pre>
+></green></div></pre>
+                        </div>
     				</section>
 
 
@@ -321,6 +338,84 @@ Automatic merge failed; fix conflicts and then commit the result.
 ~</base1>
                         </pre>
     				</section>
+
+    				<section>
+    					<h1>Committing</h1>
+                        <div>
+                            <pre class="terminal" style="width: 110%; margin-left: calc(-5% - 1em);">
+<bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master ⚡→|MERGING<>)</base1>
+></green> <span class="fragment"><bright>git</bright> <cyan>add</cyan></span> <span class="fragment"><cyan>README.txt</cyan></span>
+<span class="fragment"><bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master ⚡→|MERGING<>)</base1></green>
+<green>></green></span> <span class="fragment"><bright>git</bright> <cyan>commit</cyan></span> <span class="fragment"><cyan>-m</cyan> <yellow>"Resolved conflict"</yellow> <cyan>-m</cyan> <yellow>"Merged commit from Hacke and me"</yellow></span>
+<span class="fragment">[master 45277af] Resolved conflict
+<bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master+)</base1></green>
+<green>></green></span>
+                            </pre>
+                        </div>
+    				</section>
+				</section>
+
+				<section>
+                    <h1 style="margin: -0.2em">Pulling</h1>
+                    <div>
+                        <pre class="terminal fragment" id="log" data-fragment-index="2">
+<bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master+)</base1></green>
+<green>></green></span> <span class="fragment" data-fragment-index="1"><bright>git</bright> <cyan>log</cyan></span>
+<span class="fragment" data-fragment-index="2"><yellow>commit 45277afe2a00e5bffb165791aea4c9b972b36bdc (<b><base1>HEAD -></base1> <base00>master</base00></b>)</yellow>
+Merge: 14d16a1 e8e2239
+Author: Kiren &lt;dev@erik.work>
+Date:   Mon Sep 24 13:05:59 2018 +0200
+
+    Resolved conflict
+
+    Merged commit from Hacke and me
+
+<yellow>commit 14d16a1cb71b17a2c769e89966afa678206e100f</yellow>
+Author: Kiren &lt;dev@erik.work>
+Date:   Mon Sep 24 11:37:39 2018 +0200
+
+    Added contributors
+
+    Added myself as a contributor
+
+<yellow>commit e8e2239962a499ac6ee2b100041a76eddfa37a13 (<b><red>origin/master</red>, <red>origin/HEAD</red></b>)</yellow>
+Author: Woody Woodpecker &lt;woody@dtek.se>
+Date:   Mon Sep 24 08:52:29 2018 +0000
+
+    I want to contribute
+
+<yellow>commit 6b5ff347d9ed4cfa2190823aefef4b1d71ef8da6</yellow>
+Author: The IT-smurf &lt;smurf@chalmers.it>
+Date:   Sun Sep 23 10:33:53 2018 +0200
+
+    Initialized project with a readme and contributors-list
+<bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master ⚡→|MERGING<>)</base1></green>
+<green>></green></span>
+                        </pre>
+                    </div>
+				</section>
+
+
+				<section>
+                    <h1 style="margin: -0.2em">Pushing <small>(attempt 2)</small></h1>
+                    <pre class="terminal">
+<bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master+)</base1></green>
+<green>></green></span> <span class="fragment"><bright>git</bright> <cyan>push</cyan></span>
+<span class="fragment">Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 556 bytes | 556.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0)
+To https://git.dhack.se/git/kiren/git-workshop-upstream-introduction
+   e8e2239..45277af  master -> master
+<bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master=)</base1></green>
+<green>></green></span> <span class="fragment"><bright>git</bright> <cyan>status</cyan></span>
+<span class="fragment">On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+<bright>kiren@nixpix</bright> <green>~/git-workshop-upstream-introduction <base1>(master=)</base1></green>
+<green>></green></span></pre>
 				</section>
 
 
@@ -330,8 +425,8 @@ Automatic merge failed; fix conflicts and then commit the result.
 						<li>init, clone</li>
 						<li>add, commit</li>
                         <li>status</li>
+                        <li>pull</li>
                         <li>push</li>
-						<li>pull</li>
 						<li>log</li>
 					</ul>
                     <aside class="notes">

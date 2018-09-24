@@ -206,3 +206,14 @@ green { color: #859900 }
   transform: translateY(-100%);
 }
 .reveal .fragment.inflate:not(.visible) { max-height: 0px !important }
+
+.reveal #log.fragment {
+  transform: scale(0.7) translateY(-10em);
+  width: 120%;
+  margin-left: calc(-10% - 1em);
+  opacity: 1;
+  visibility: visible;
+}
+.reveal #log.fragment.visible {
+  transform: scale(0.7) translateY(-17em);
+}
