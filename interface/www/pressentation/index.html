@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="/lib/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="/lib/reveal.js/css/theme/solarized.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="/lib/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '/lib/reveal.js/css/print/pdf.css' : '/lib/reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-transition="zoom" data-transition-speed="fast">
+					<h1><img class="plain" alt="GIT" src="res/Git-Logo-2Color.svg" width="50%"></h1>
+					<h3>An Introduction</h3>
+					<p>
+						<small>
+                            Hosted by DNS &amp; snIT feat. dHack &amp; digIT
+                        </small>
+					</p>
+                    <aside class="notes">
+                		Wellcome!
+                	</aside>
+				</section>
+
+				<section data-transition="zoom-in slide-out" data-transition-speed="slow">
+					<h2>The plan</h2>
+					<ul>
+						<li>Why git?</li>
+						<li>What is it?</li>
+						<li>Trying it out</li>
+						<li>Pizza and more exercises</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Who...</h2>
+					<p class="fragment fade-in-then-semi-out">are first year students?</p>
+					<p class="fragment fade-in-then-semi-out">has used git before?</p>
+					<p class="fragment fade-in-then-semi-out">has herd of git before?</p>
+					<p class="fragment fade-in-then-semi-out">has coded in their studies?</p>
+					<p class="fragment fade-in-then-semi-out">has coded besides any courses at Chalmers?</p>
+				</section>
+
+				<section>
+					<section>
+                        <h2>Why git?</h2>
+    				</section>
+
+					<section>
+                        <img class="plain" alt="bang head against desk" src="https://hanslodge.com/img/1965560.png" width="50%">
+    				</section>
+				</section>
+
+				<section data-autoslide="13200" data-background-transition="zoom" data-background-video-loop data-background-video="https://i.imgur.com/WI74beC.mp4"></section>
+
+				<section>
+                    <h2>The Time Traveler</h2>
+                </section>
+
+				<section data-background-color="#586E75">
+                    <h2 style="color: #FDF6E3">Break</h2>
+                    <p style="color: #FDF6E3">Installation instructions at <a href="https://git.dtek.se" style="color: #FDF6E3; text-decoration: underline;">git.dtek.se</a></p>
+                </section>
+
+				<section style="text-align: left;">
+					<h1>Thanks!</h1>
+					<p>
+						- <a href="https://slides.com">git.dhack.se/eval</a> <br>
+						- Pizza
+					</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="/lib/reveal.js/lib/js/head.min.js"></script>
+		<script src="/lib/reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+                //autoSlide: 5000,
+				controls: false,
+				progress: false,
+				//history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '/lib/reveal.js/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
